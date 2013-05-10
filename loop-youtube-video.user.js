@@ -52,7 +52,6 @@ inject(function () {
 		if (looping) {
 			this.setAttribute('data-tooltip-text', 'Turn off looping');
 			this.style.color = '#932720';
-			//this.children[0].innerHTML = looping ? 'Unloop ' : 'Loop ';
 		} else {
 			this.setAttribute('data-tooltip-text', 'Loop this video');
 			this.style.color = '';
