@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name			Loop YouTube Video
 // @description		Adds a Loop button to YouTube that lets you auto-repeat videos.
-// @namespace		loop-youtube-video-c
+// @namespace		youtube-loop-video-c
 // @match			*://*.youtube.com/watch?v=*
 // @version			2.1
 // ==/UserScript==
