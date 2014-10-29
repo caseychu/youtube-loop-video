@@ -7,7 +7,7 @@
 // ==/UserScript==
 
 // Make sure we're actually on a video page!
-if (!document.getElementById('watch7-sentiment-actions'))
+if (!document.getElementById('watch8-secondary-actions'))
 	return;
 
 // Add the button to toggle whether we're looping.
@@ -25,7 +25,7 @@ button.innerHTML =
 		role="button"> \
 			<span class="yt-uix-button-content">Loop </span> \
 	</button>';
-document.getElementById('watch7-sentiment-actions').appendChild(button);
+document.getElementById('watch8-secondary-actions').appendChild(button);
 
 // Styles for the button. Most of it is taken from YouTube's style for
 // .yt-uix-button-panel:hover #watch-like-dislike-buttons .yt-uix-button-text.yt-uix-button-toggled
