@@ -7,12 +7,12 @@
 // ==/UserScript==
 
 // Make sure we're actually on a video page!
-if (!document.getElementById('watch7-sentiment-actions'))
+if (!document.getElementById('watch8-secondary-actions'))
 	return;
-	
+
 // Add the button to toggle whether we're looping.
 var button = document.createElement('span');
-button.innerHTML = 
+button.innerHTML =
 	'<button \
 		id="watch-loop" \
 		class="yt-uix-button yt-uix-button-text yt-uix-tooltip" \
@@ -25,9 +25,9 @@ button.innerHTML =
 		role="button"> \
 			<span class="yt-uix-button-content">Loop </span> \
 	</button>';
-document.getElementById('watch7-sentiment-actions').appendChild(button);
+document.getElementById('watch8-secondary-actions').appendChild(button);
 
-// Styles for the button. Most of it is taken from YouTube's style for 
+// Styles for the button. Most of it is taken from YouTube's style for
 // .yt-uix-button-panel:hover #watch-like-dislike-buttons .yt-uix-button-text.yt-uix-button-toggled
 GM_addStyle('\
 	.yt-uix-button-toggled#watch-loop { \
@@ -62,21 +62,21 @@ inject(function () {
 
 	// Controls whether we're looping.
 	var looping = false;
-	
+
 	// Listen for the button click.
 	document.getElementById('watch-loop').onclick = function () {
 		looping = !looping;
 		this.setAttribute('data-tooltip-text', looping ? 'Turn off looping' : 'Loop this video');
 		return false;
 	};
-		
+
 	// Returns the player API interface or false if it's not ready.
 	function getPlayer() {
-		return window.yt.player 
+		return window.yt.player
 			&& window.yt.player.getPlayerByElement
 			&& window.yt.player.getPlayerByElement(document.getElementById('player-api'));
 	}
-		
+
 	// Listen for the end of the video.
 	function attach() {
 		var player = getPlayer();
@@ -90,6 +90,6 @@ inject(function () {
 	function wait() {
 		setTimeout(getPlayer() ? attach : wait, 100);
 	}
-	
+
 	wait();
 });
