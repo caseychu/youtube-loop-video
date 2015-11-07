@@ -15,7 +15,7 @@ var button = document.createElement('span');
 button.innerHTML =
 	'<button \
 		id="watch-loop" \
-		class="yt-uix-button yt-uix-button-text yt-uix-tooltip" \
+		class="yt-uix-button yt-uix-button-text yt-uix-tooltip yt-uix-button-size-default yt-uix-button-opacity" \
 		type="button" \
 		title="Loop this video" \
 		data-orientation="vertical" \
@@ -26,28 +26,6 @@ button.innerHTML =
 			<span class="yt-uix-button-content">Loop </span> \
 	</button>';
 document.getElementById('watch8-secondary-actions').appendChild(button);
-
-// Styles for the button. Most of it is taken from YouTube's style for
-// .yt-uix-button-panel:hover #watch-like-dislike-buttons .yt-uix-button-text.yt-uix-button-toggled
-GM_addStyle('\
-	.yt-uix-button-toggled#watch-loop { \
-		color: #932720; \
-	} \
-	.yt-uix-button-panel:hover .yt-uix-button-toggled#watch-loop { \
-		border-color: #c6c6c6; \
-		background-color: #e9e9e9; \
-		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .20); \
-		-ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .20); \
-		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .20); \
-		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .20); \
-		filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#fff8f8f8, EndColorStr=#ffeeeeee); \
-		background-image: -moz-linear-gradient(top, #f8f8f8 0, #eee 100%); \
-		background-image: -ms-linear-gradient(top, #f8f8f8 0, #eee 100%); \
-		background-image: -o-linear-gradient(top, #f8f8f8 0, #eee 100%); \
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f8f8f8), color-stop(100%, #eee)); \
-		background-image: -webkit-linear-gradient(top, #f8f8f8 0, #eee 100%); \
-		background-image: linear-gradient(to bottom, #f8f8f8 0, #eee 100%); \
-	}');
 
 // Injects code into the global scope.
 function inject(fn) {
